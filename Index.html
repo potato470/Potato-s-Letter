@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Letter For You ♡</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink:#e9aab9;
+  --dark:#694b58;
+  --light:#fff8fa;
+  --rose:#c77d94;
+}
+* {box-sizing:border-box}
+body {
+  margin:0;
+  min-height:100vh;
+  color:var(--dark);
+  background:linear-gradient(145deg,#fff7f9,#f8e5eb,#fceff2);
+  font-family:'DM Sans',sans-serif;
+  overflow-x:hidden;
+}
+body:before {
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.25;
+  background-image:radial-gradient(#d69aaa 0.7px,transparent 0.7px);
+  background-size:22px 22px;
+}
+main {
+  width:min(650px,92%);
+  margin:auto;
+  padding:75px 0 60px;
+  position:relative;
+}
+.top {
+  text-align:center;
+  margin-bottom:45px;
+}
+.small {
+  font-size:10px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  color:#bb8294;
+}
+h1 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(43px,10vw,65px);
+  font-weight:400;
+  margin:15px 0 5px;
+}
+.subtitle {
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:19px;
+  color:#ad8491;
+}
+.flower {
+  font-size:24px;
+  margin:18px 0;
+}
+.paper {
+  background:rgba(255,255,255,.77);
+  padding:clamp(25px,7vw,55px);
+  border:1px solid #f1dce3;
+  border-radius:4px;
+  box-shadow:0 20px 65px #b9819320;
+}
+.letter {
+  font-family:'Cormorant Garamond',serif;
+  font-size:21px;
+  line-height:1.9;
+  white-space:pre-line;
+}
+.signature {
+  font-family:'Cormorant Garamond',serif;
+  font-size:23px;
+  font-style:italic;
+  text-align:right;
+  margin-top:35px;
+}
+.section {
+  margin-top:65px;
+  text-align:center;
+}
+.section h2 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:36px;
+  font-weight:400;
+}
+.section p {
+  color:#a98290;
+  font-size:13px;
+  line-height:1.8;
+}
+input,textarea {
+  width:100%;
+  padding:15px;
+  margin:8px 0;
+  border:1px solid #efd6df;
+  background:#fffafb;
+  border-radius:4px;
+  font:14px 'DM Sans',sans-serif;
+  color:var(--dark);
+  outline:none;
+}
+textarea {min-height:140px;resize:vertical}
+input:focus,textarea:focus {border-color:var(--rose)}
+button {
+  background:#c9879c;
+  color:white;
+  border:0;
+  padding:14px 27px;
+  border-radius:3px;
+  font:12px 'DM Sans',sans-serif;
+  letter-spacing:2px;
+  cursor:pointer;
+  transition:.2s;
+}
+button:hover {background:#a96e83;transform:translateY(-2px)}
+button:disabled {opacity:.5;cursor:wait;transform:none}
+.status {font-size:13px;margin:12px 0;min-height:20px}
+footer {
+  text-align:center;
+  margin-top:65px;
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  color:#b38b98;
+}
+.admin {
+  margin-top:65px;
+  padding:20px;
+  border-top:1px solid #e9ccd5;
+}
+.admin summary {
+  text-align:center;
+  cursor:pointer;
+  font-size:11px;
+  letter-spacing:2px;
+  color:#b08090;
+}
+#inbox {margin-top:20px}
+.reply {
+  background:#fff9fb;
+  padding:16px;
+  border:1px solid #efdce3;
+  margin:12px 0;
+  text-align:left;
+  overflow-wrap:anywhere;
+}
+.reply small {color:#ad8491}
+.heart {
+  position:fixed;
+  color:#d99aaa;
+  opacity:.3;
+  pointer-events:none;
+  animation:float 9s linear infinite;
+}
+@keyframes float {
+  from {transform:translateY(105vh) rotate(0deg)}
+  to {transform:translateY(-10vh) rotate(180deg)}
+}
+</style>
+</head>
+<body>
+
+<main>
+  <header class="top">
+    <div class="small">A little something for you</div>
+    <h1>A Letter For You</h1>
+    <div class="subtitle">Some words from the heart</div>
+    <div class="flower">୨ৎ</div>
+  </header>
+
+  <section class="paper">
+    <div class="letter" id="letterText">Dear Vaishnavi,
+
+I wanted to tell you something, and honestly I've been scared to say it for a really long time.
+
+There are some things that are easier to write than to say out loud. So I thought I'd leave these words here, somewhere you could read them whenever you wanted.
+
+[Vaishnavi.. I really like you. I don’t expect anything from you, and I’m not telling you this so you feel like you have to say anything back. I just really wanted you to know. Ever since 7th grade, I’ve had a crush on you. It sounds crazy saying that because it’s been so long, but yeah… I’ve been keeping this to myself all this time. I kept thinking maybe one day I’d find the right moment or finally get the courage to tell you, but I never did. I know you already have a lot going on, and I really don’t want this to become another thing you have to deal with. I know you might be tired of this kind of stuff too, which is honestly why I kept quiet for so long. But I genuinely love talking to you. Your texts can literally make my day better, and sometimes I find myself waiting just to talk to you again. I’m not saying I’m better than anyone else or trying to compare myself to other guys—I just want you to know that what I feel for you has always been real. I was scared to tell you because I really value you and I didn’t want things to become weird between us. But with graduation only like 2–3 months away, I realised I didn’t want to leave school without ever being honest with you and then spend years wondering what would’ve happened if I had just told you. So yeah… I love you. You genuinely mean a lot to me. I could listen to you for hours, even if you were just complaining about random things. I love hearing you talk, and hearing your voice is genuinely something I enjoy more than you probably realise. You don’t have to feel the same way, and I don’t expect anything from you. I just didn’t want to keep this inside anymore.]
+
+Whatever your response is, I want you to know that you can be completely honest with me. There's no pressure, no expectations, and no need to rush.
+
+Thank you for taking the time to read this.</div>
+    <div class="signature">— Someone who wanted you to know ♡</div>
+  </section>
+
+  <section class="section" id="replySection">
+    <div class="flower">✿</div>
+    <h2>Your words matter too.</h2>
+    <p>
+      If you'd like to leave something behind,<br>
+      this little space is yours.
+    </p>
+    <form id="replyForm">
+      <textarea id="replyMessage"
+        placeholder="Write whatever is on your mind..."
+        maxlength="3000" required></textarea>
+      <button id="sendButton" type="submit">SEND YOUR REPLY ♡</button>
+    </form>
+    <div class="status" id="replyStatus" aria-live="polite"></div>
+  </section>
+
+  <section class="admin">
+    <details>
+      <summary>PRIVATE CORNER ♡</summary>
+      <div id="loginArea">
+        <p>Admin access</p>
+        <form id="loginForm">
+          <input id="adminEmail" type="email" placeholder="Your email" required>
+          <input id="adminPassword" type="password" placeholder="Your password" required>
+          <button type="submit">SIGN IN</button>
+        </form>
+        <div class="status" id="loginStatus" aria-live="polite"></div>
+      </div>
+      <div id="inboxArea" hidden>
+        <p>Your private inbox 💌</p>
+        <button id="refreshButton" type="button">REFRESH REPLIES</button>
+        <button id="logoutButton" type="button">SIGN OUT</button>
+        <div id="inbox"></div>
+      </div>
+    </details>
+  </section>
+
+  <footer>Made with a little courage and a lot of heart.</footer>
+</main>
+
+<script>
+// Replace these two placeholders with your Supabase details.
+const SUPABASE_URL = "https://ymemrmgyuzkqvzasfgnd.supabase.co/rest/v1/";
+const SUPABASE_KEY = "sb_publishable_p283AFQs3u6FFuMD_IZRuw_V4OYBkTm";
+
+const db = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+const replyForm = document.getElementById("replyForm");
+const replyStatus = document.getElementById("replyStatus");
+
+replyForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const button = document.getElementById("sendButton");
+  const message = document.getElementById("replyMessage").value.trim();
+
+  if (!message) return;
+
+  button.disabled = true;
+  replyStatus.textContent = "Sending your message...";
+
+  const { error } = await db
+    .from("replies")
+    .insert([{ message }]);
+
+  if (error) {
+    replyStatus.textContent = "Something went wrong. Please try again.";
+    console.error(error);
+  } else {
+    replyStatus.textContent = "Your words have been received. ♡";
+    replyForm.reset();
+  }
+
+  button.disabled = false;
+});
+
+const loginForm = document.getElementById("loginForm");
+const loginStatus = document.getElementById("loginStatus");
+
+loginForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  loginStatus.textContent = "Signing in...";
+
+  const email = document.getElementById("adminEmail").value;
+  const password = document.getElementById("adminPassword").value;
+
+  const { error } = await db.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  if (error) {
+    loginStatus.textContent = "Login failed. Check your credentials.";
+    return;
+  }
+
+  loginStatus.textContent = "";
+  showInbox();
+});
+
+async function showInbox() {
+  const { data: { user } } = await db.auth.getUser();
+
+  if (!user) return;
+
+  document.getElementById("loginArea").hidden = true;
+  document.getElementById("inboxArea").hidden = false;
+
+  await loadReplies();
+}
+
+async function loadReplies() {
+  const inbox = document.getElementById("inbox");
+  inbox.textContent = "Loading replies...";
+
+  const { data, error } = await db
+    .from("replies")
+    .select("id, message, created_at")
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    inbox.textContent = "Couldn't load replies. Check your permissions.";
+    console.error(error);
+    return;
+  }
+
+  inbox.replaceChildren();
+
+  if (!data.length) {
+    inbox.textContent = "No replies yet. ♡";
+    return;
+  }
+
+  data.forEach((item) => {
+    const card = document.createElement("div");
+    card.className = "reply";
+
+    const message = document.createElement("p");
+    message.textContent = item.message;
+
+    const date = document.createElement("small");
+    date.textContent = new Date(item.created_at).toLocaleString();
+
+    card.append(message, date);
+    inbox.appendChild(card);
+  });
+}
+
+document.getElementById("refreshButton")
+  .addEventListener("click", loadReplies);
+
+document.getElementById("logoutButton")
+  .addEventListener("click", async () => {
+    await db.auth.signOut();
+
+    document.getElementById("loginArea").hidden = false;
+    document.getElementById("inboxArea").hidden = true;
+    loginStatus.textContent = "Signed out.";
+  });
+
+// Restore an existing admin session.
+db.auth.getSession().then(({ data }) => {
+  if (data.session) showInbox();
+});
+
+// Decorative floating hearts.
+for (let i = 0; i < 9; i++) {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.textContent = "♡";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDelay = Math.random() * 9 + "s";
+  heart.style.fontSize = (14 + Math.random() * 18) + "px";
+  document.body.appendChild(heart);
+}
+</script>
+</body>
+  </html>
+  
